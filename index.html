@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pogveggie Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="all.min.css">
+</head>
+<body>
+    <header>
+       
+        <div class="btns-container">
+            <i class="fas fa-bars bars"></i>
+            <i class="fas fa-times times"></i>
+        </div>
+    </header>
+
+    <!-- sidebar -->
+    <aside class="aside">
+        <div class="aside-wrapper">
+            <div class="logo-section">
+                <a class="logo" rel="home" href="#">
+                    <img src="https://i.imgur.com/qv5rsUL.png" alt="logo" width>
+                    <span>Pogveggie</span>
+                </a>
+                <span>Web Developer</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#header">About</a>
+                <a href="#header">My Skills</a>
+                <a href="#section-work">Work</a>
+                <a href="#section-blog">Blog</a>
+                
+            </nav>
+            <!-- social icons -->
+            <ul class="social-icons">
+                <li>
+                    <a href="https://twitter.com/pogveggie">
+                        <img src="data:image/png;base64,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" style="width:30px; ">
+                    </a>
+                </li>
+                <li>
+                   
+                    <a href="https://github.com/Pog4Veg">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX///8bHyMAAAAYHCARFhsNExgVGh4AAAr7+/sACRAAAAYLERcGDhQTGB0ABw8PFRrV1db09PSXmJmRkpO2t7hTVVceIiZhY2WvsLGkpabIyMkyNTjb29yVlpd6e33Oz8+/v8BNT1Hk5OSJiot/gII0Nzo7PkG0tbXp6elvcHJISk2foKFmaGoqLjF6fH1iY2Xy0XmBAAANRklEQVR4nO1daXeqPBDWiYpsKrUqLlW0LsVq7///dy+4VSTLJBBCz3mfT/ecK5XHJLPPpNHQjmAxC78/l6fR/nweN5vj8Xm+H53iz+9wtgj0f71WbKKP09wCAKvntVs+ad5AiN9qe730f/r7ePi+MP2iKtiEP/uEQK/daXJBfNd2APbbw8b0K0tgM5244Hg+n1sGHc8B99/0LyxmN/rxwWoTMan8crYt6CyjrmkKPAThCMBTYfdg6QFMDjWVP91wDU6/ALs7+gD/ItNs8ljF4LRKoHdFG+BnYJrSM7rTM7RLo3eFB/OpaV53bLZgCXSCEjoWfH6ZJpdgMAFPA70rbDiZViCrdenbMwsXRiYP5OoI5UkXFvrmOC7WFfC7cvxnwqQL4or4pWjDsnIrYKpRvtDgQbW6Y7CDSvklIHBeVcavuwQd+k+EDsQVbdXItg3wS+HBewX8uico4jwUA4GJdudqZlcrYV7hWTO9BLcGF/AKAp8a+X3tLcP8Ujh7bfZ4VKGO56HvaNqpQ+M79A4CQx0ER5UreQ5gUjq/4GxWhr7Cnpes/QclBmHKQcsq1TeOanMEf0GgRHkzrdMRfIBAWBbBt1oSTFCWRzWsK8GE4lsZBD/rSzChWIIJV2uCCcXCur/GW/QK+ChG8LvuBBOK30UIhvUnmFA8qBOc/QWCCUVl1b/4GwQT1a9owAW9+plqdHRcNTN8Xjdjm43+XIXgpF7uEh+2gr9Ye0WYhbxajP4WwYRiJEfwq4YOIR8E5CJwO76U8SGBY/cr+hlaXloCB/xQZmsvQ3DL/2P+OlqtZuFwYoGlW+B2bID1ZzgbDFahw/2ktcUTFNkyv0bEYroGR6aATQ7EhvnHb457zf858bZNV6Dqiff86SDcF6v0YqIP7jCT3n7n//LExTIUaULvdTsstmCVzrENk9c16Qr2lhfjCAp+Kepu6H67TqkcPWolzURQN4fbp13RqxKL+tzULS9t04aYKvtDwVfg9mksstb6LAvpDcpJDvswYVSXbETby16KCa6ExozFjOEFW3p2ipCW6/UsBx5w0spvn7pZCOzYJQlCkQbi6qKzsAgBODURm3XWGPLdXsLHO4/iz7fwEM1Wg8VgNYuiQ/i2jY9jK7UbsgXFLjcIehLVmPlCLwMRmAGuM/Z+r2PwvbRCPf6OOC0H3a/V+8fpnFa8X2kSmHD/+ndP+HaCKHEgJkgI/0+ktSipIXL8PGBd72D2HY/BcYndivifRMRV+AvQWIqdQqageWDl74craa/76xBDLKq0EIqaRM9whQ0mMuPprBQQQaTzL4vI2zoTRLEoW5RWgabYrmiP2I8PMG6vU1pOSwU7RL0ZR9gLbPfb81F1fPI4IhyZ1pr1tFjZXxhqLkriY4RaBNYiopaQq/D1Y4J5xxbjJKJO4Z9YQ5btJnJN7k9H1XLKAnMOE3FK1dkIZXpB/WVpugw05wRhzlxgFcrXFQXdH8nB+8k/irEWrg9LhLRKB8JuvgLy9t8U66GzBFUlQCf8KJbXHFucTmwDzO4QxpDu6OT8RJy2v0AyfF4qPtEJsZzCiF08w8gEtyv26DYI98WJQsuZplFRgxY06UJkH0Xv7wRkbIae5Gu+9GaMZFqUEfEsTcD4r3dkYxEyq5/7dSrEXqadMxOwEeStXp7UUkaOQkAkGq6c50oinMV+hVd+ETkeWOM5xfM2ldmknbHRsQ4ydWhPlptMWYJq/VFZiPG5kSfFvZRQ96VU5RYBQWfxnhwMF/2QL1UOoAV4+5I0789IVOiZ3qMpTugd9/CD0Y6TIGJeEfBy0bqHI/6h9agg61ERhsIE1A3uPa+PPoa2yZTFL9Buwj1Nhtei9VjCZBGxGuN2ENEmm4ss5tAOfLTmakFjg2y1EKRXxEjJccsE7pFVW52dYV6/wOpE/3j5ODp8ZTRQmgXWsLk4+mh9bzIC9Yot8mRdRA02MtAxb7D9AtsJcjG+saK3JsrwCqxKtFNvXViEc/85jGbVXoHLdTbbpwY+2F0XdX8Fcudd5D/SyDMYQ6QB6bSnxb5Y++Cy3vUB1tRMdh5WWfSMO/dZYBku0HLXKdDlpwNI8ZHIR1HZ7eOjRksw8kAGQK0Dop7xxrA2ZvcVyGRZb4rOyNXJZkuBfG9viHZEKIlxo0AqRHfZOCED+nVj+IY7Xf24McKaNDVj+I2TkP6kscd6Wn+TYefYOOMI1o8hbpeS/Z9liDyHzXNjjGVYM22BdWvPDSRBei2cQWD1+BjPsGY2DTojiN+lNbNLkdWwyRqiJU1kmlMWuFJaGYZm2yzyOCP1+LkxR37SNldjQgXSrSW7xhHJsDZpmSu+sAyPjRFyP99SAHUBsrGg6Y8aMVImMbp/TQEbqU98iyU2xV2veOkH0qRJ/EN01W29FCI2Up/4+FNs2r9e6gKbXutN0bG2XFmxUaDz3NYBP7EsX/1uEOi3hplEQVSdRA2+GmMhUWFUJ8sUa5VelsXG1gvReokMAb0sl0EZyG6w9Jo708QeQNfsX2op8b0k5mr0X4HVhs12ak2jD22NMvlo2XHJCeK7NETzIioD/pUv0lGmfrYmxQr41oJr/AzPsCaZbomWhGvzE1qY1iVoii2Ieji16NrEmsgaie6QW5vdQaIlqA6WG7oI+lFfKjNM12ib8xUyrZL3QL3MxDzzwf0f/KEindszUl19Jju5U8jsuIfsx/dbNE02H16xk5hD+ei3kJpqTSyjwkbqJorfI4Xve2ryhxRph9xiPPqeZHrXmkbb17oyPaTPgl+mRbpp0jxdyy1F9HhQrtG5SUypjFhuuuZz6YFMH3AznfJuxD6VvEwkM4YHHTS9wW8bWEXZ21Iyek1ymyYUncrT+kvZd8za0JLbND2LUbUEJ7IE2/8yzx/kh8xXOnjgay493vZlCWQM9sefGFVm3bzL37xIXmaboMtMn9GuyEYNVC53zfl5EjOGfkFgXYFMDZWuj85XOI2VxnH34UfzVp2dla5poPShMeo1O7YFYNnsZL8HW40cZ0fF66Mp9+rRVSIch2H0Hg4nAEy/zINYk3I8zNnfykdOzqSghdx+L23tvh/Z3+bCMSx9IQfbnvr139SgIMX1ym7m1Y4dlPMtGIUlGquD4bjQhQv0wC5lVtTLBz94h77lwPGtjOzUVxS7gM5qUtGmF3BRFEb/ZV7tyuHuG78HMBrO1NcyGEzjMYBUzIEGVjEsJXXcexmZ9EVExkXLBrCP23C2kSoMDwbX4exWYXZNTkCQVuBg77M6PTgj7CfiX66+YQ4szuE9vU2g1y7rhgx2KpeW//dfwjIB9oS0ZUr9Sr2GkBPTpVepOCTzkyDDXaQjpT8+ZeapCcArSaeP3utkLWxcC65s0h87u0IMbpaTtT7Z6Bpm3Jb0NKLyLlvkx8lYV7BkF34stDWII91iI5Fx4UJwEQsrYEPs51MldrVs+RtepWNFjDcVpTi/GSc+G8sX7lOVTKrEkFjeNwuLRFk7MHsprWCfKpU0YEu3uRDfM8PegZkDLCiHUAvEqTnhL9+MEOEsYdPKaHC+ylBr5cOPQWYCc99To8tyILJuM88KURz5Xfz6YdJD/bSs5Xl5PGK7Uj21eUvFpSn2dJwYu6WXdZxXDkv4qabfsL1MLHhYAddlXfX3ogOCCT3M4Ktm39BFlXQQG338WQciZ4rNzvD6Uh0bdqr3Q+ALQamQ2Tqse0jzinw2AfBatyvF0ovIzkP1wJtUUUgOllRJGuPGalqLXnDYjrzLhXjecXsoFAMvdAmx3F2yrPuAmfciBAmKt7MXURey9wGzfk69WUOl5Mn9zaTlNz2n7GudnVjAMlXJZo6oWhF0DlNS94JV7lZP9C9N2gjdryJQZthS68kKqIpfZ9GXKkPlWjv6F4K+SmhVhuqtLnTpra9EQZFhkSq0KZ2irhYvNYaUZKgE6FfLWkc9VV9K2gIKjsYdUr+0VfTP0qHCEOSjei9gVJNZ3nf5akOBYRlyj76KiYSGU1QySXmG5Qj2D9b3ttNrjTNXNgebWTg8jVWLiKUZliXWOTdZ+3bqNtm7Y4K5m/7bstvKh1SWYXn12KLsHun4CTp3E0gxECXNsJiayIITV6NAmaGU90TKLTcfWBLFgZUw9J2Su5IDiQLPKhh65/KNDnyRbgUMYaRjBCC3XijDUFXEYRkSXf7NDHDziHQzbOmLFgVHVMWEMkNcrM3a6ez2+MTsVK0MCWhuY1254iSfQhL/CgTDtv4uiK64rLynjyFMqugPiHoC1ahtDd0y7TQeukt+cbLyAEI+ww6cqmtfHex4W1UPQ2dcbdvjFNhbVQdDt/rO1WCbS44+GKpaHMzsWh9OJjoeN/8Y3UhlM/RhZGrE72BEteO8Uhn6sDc5zzDhmN+rysMzKAxbcDQ99mdxyjVeKe/SnKRxYVSHeZSbLTgZ/aisl7ODZYmlrd1IGt3p7mkhifqA+uPvsW7DWUPMuQAGS7idyE4B23hzk84tB2LTxy+P7vvkUnNyLvJqmz04DsA6rNk9BXcEq+i96MlZhGFUi3lb/+N//I//gcd/4N7lYxzC/cUAAAAASUVORK5CYII=" style="width:30px;">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="https://play-lh.googleusercontent.com/0oO5sAneb9lJP6l8c6DH4aj6f85qNpplQVHmPmbbBxAukDnlO7DarDW0b-kEIHa8SQ" style="width:30px;">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- text zone  section one-->
+    <section id="section-home" class="section-home">
+        <div class="text-zone">
+            <h1 style="padding-bottom:20px;"> Hi, I'm</h1>
+                <h1 style="color: skyblue; padding-bottom:20px;" >Pogveggie, </h1> 
+        <h1 style="color: pink">Web developer</h1>
+            
+            <p class="gray-text">Front End Developer</p>
+            <br>
+
+                <!-- contact button -->
+            <a href="https://discord.gg/nXZU7ZhstC" class="contact-button">
+                <div>
+                    <span class="bg"></span>
+                    <span class="base"></span>
+                     <span class="text" >
+                        
+                        Contact me!
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <!--  -->
+        <div class="scroll-down">
+            <span>scroll down</span>
+            <i class="fas fa-arrow-down"></i>
+        </div>
+
+        <div class="scroll-down scroll-down--left">
+            <span>scroll down</span>
+            <i class="fas fa-arrow-down"></i>
+        </div>
+    </section>
+
+    <!-- part 2 starts here  --> <!-- part 2 starts here  --> <!-- part 2 starts here  -->
+    <section id="section-work">
+    <h1 style="font-size:50px; color:  #08fdd8;">My Work</h1>
+    <p style="padding-top:10px;">Some small projects that I have done in the past.</p>
+        
+        <div class="fake-big-2"></div>
+    </section>
+
+    <!-- magical wall section -->
+    <div id="home-magicwall" class="fake-magicwall">
+        <ul>
+            <li>
+                <div class="magic-wall_item lazyload" id="modal1">
+                    <img src="flappybird.png" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="https://codepen.io/Pog4Veg" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 1 -->
+            <li>
+                <div class="magic-wall_item lazyload" >
+                    <img src="pong.png" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="https://codepen.io/Pog4Veg" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 3 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="map.png" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="https://codepen.io/Pog4Veg" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 3 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="drawing.png" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="https://codepen.io/Pog4Veg" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 4 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="nav.png" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="https://codepen.io/Pog4Veg" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 5 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="download.jpeg" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 6 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="download.jpeg" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 7 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="download.jpeg" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 8 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="download.jpeg" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="" class="colorbox"></a>
+                </div>
+            </li>
+            <!-- magic wall 9 -->
+            <li>
+                <div class="magic-wall_item lazyload">
+                    <img src="download.jpeg" alt="image">
+                    <div class="hover-content"></div>
+                    <a href="" class="colorbox"></a>
+                </div>
+            </li>
+           
+        </ul>
+    </div>,
+    <!-- this is the third part the about me section -->
+    <section id="section-about">
+
+        <div class="text-zone3">
+            <div id="header">
+                <h2>Me, Myself and I</h2>
+            </div>
+
+            <p>I am a web developer and coding enthusiast who has around five years of experience in programming. I like to make useful websites
+                that have great user interfaces, as well as machine learning projects using the platform Microsoft Azure.
+                I am knoledgable in the coding languages Javascript, Python, Java (AP Computer Science), C#, Arduino, Swift, & Lua (Roblox Development). 
+
+               <p> Here is a list of my achievements in programming:</p>
+                <ul style="padding-left:30px;">
+                    <li>Microsoft Technology Associate for HTML5</li>
+                    <li>Microsoft Technology Associate for Python</li>
+                    <li>Completed Advanced Web Design Course of the Johns Hopkins University Center of Talented Youth </li>
+                  </ul>
+                  
+                  
+            </p>
+            <p>
+                I am currently working on an app that will help people with disablities find a job. I hope that this app will help people with disabilities get more equal employment oppurtunities.
+            </p>
+        </div>
+
+        <div class="skills-charts">
+            <div id="myCanvasContainer">
+                <canvas width="500" height="500" id="myCanvas">
+                    <ul id="tags">
+                        <li><a href="#" target="_blank">HTML</a></li>
+                        <li><a href="#" target="_blank">CSS</a></li>
+                        <li><a href="#" target="_blank">ES5</a></li>
+                        <li><a href="#" target="_blank">TypeScript</a></li>
+                        <li><a href="#" target="_blank">REST</a></li>
+                        <li><a href="#" target="_blank">JSON</a></li>
+                        <li><a href="#" target="_blank">GSAP</a></li>
+                        <li><a href="#" target="_blank">Data Science</a></li>
+                        <li><a href="#" target="_blank">Wordpress</a></li>
+                        <li><a href="#" target="_blank">PHP</a></li>
+                        <li><a href="#" target="_blank">Python</a></li>
+                        <li><a href="#" target="_blank">Node JS</a></li>
+                        <li><a href="#" target="_blank">Git</a></li>
+                        <li><a href="#" target="_blank">_lodash</a></li>
+                        <li><a href="#" target="_blank">SASS</a></li>
+                        <li><a href="#" target="_blank">JQuery</a></li>
+                        <li><a href="#" target="_blank">SQI</a></li>
+                        <li><a href="#" target="_blank">Gulp</a></li>
+                        <li><a href="#" target="_blank">npm</a></li>
+                        <li><a href="#" target="_blank">BEM</a></li>
+                    </ul>
+                </canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- the about section ends here -->
+
+    <!-- blog section starts here -->
+    <!-- BLOG SECTION -->
+        
+    <section data-load="blog" id="section-blog" class="section-full section-blog js-way">
+
+        <div class="fake-big-2"></div>
+    
+        <!-- blog articles wrapper -->
+        <div class="blog-articles">
+    
+            <!-- Blog articles card 1--> 
+            <article class="post-articles" style="border-top: 2px solid#81D8F7">
+                <div class="post-content">
+                    <time class="post-date" style="color:#81D8F7;"> Computer Science</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2354" href="#">
+                                 Coming Soon
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog articles card 2-->
+            <article class="post-articles" style="border-top: 2px solid #f50057;">
+                <div class="post-content">
+                    <time class="post-date" style="color:#f50057;"> Web Development</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2182" href="#">
+                                Coming Soon		
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog articles card 3-->
+            <article class="post-articles" style="border-top: 2px solid orange;">
+                <div class="post-content">
+                    <time class="post-date" style="color: orange;">JavaScript</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2113" href="#">
+                                Coming Soon	
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon	
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Blog articles card 4-->
+            <article class="post-articles" style="border-top: 2px solid orange;">
+                <div class="post-content">
+                    <time class="post-date" style="color: orange;"> JavaScript</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2037" href="#">
+                                Coming Soon		
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon	
+                    </div>
+                </div>
+            </article>
+    
+            <!-- Blog articles card 5-->
+            <article class="post-articles" style="border-top: 2px solid #08fdd8">
+                <div class="post-content">
+                    <time class="post-date" style="color: #08fdd8;"> HTML &amp; CSS</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="1900" href="#">
+                                Coming Soon			
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon
+                    </div> 
+                </div>
+            </article>
+
+            <!-- Blog articles card 6 -->
+            <article class="post-articles" style="border-top: 2px solid #81D8F7;">
+                <div class="post-content">
+                    <time class="post-date" style="color:#81D8F7;">Computer Science</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2312" href="#">
+                                Coming Soon		
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon		
+		    </div>
+    
+                </div>
+            </article>
+
+            <!-- Blog articles card 7 -->
+            <article class="post-articles" style="border-top: 2px solid #08fdd8">
+                <div class="post-content">
+                    <time class="post-date" style="color:#08fdd8"> HTML &amp; CSS</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2019" href="#">
+                                Coming Soon	
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon
+                    </div>    
+                </div>
+            </article>
+    
+            <!-- Blog articles card 8 -->
+            <article class="post-articles" style="border-top: 2px solid #08fdd8">
+                <div class="post-content">
+                    <time class="post-date" style="color: #08fdd8"> HTML &amp; CSS</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2000" href="#">
+                                Coming Soon			
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon	
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog articles card 9-->
+            <article class="post-articles" style="border-top:2px solid #81D8F7">
+                <div class="post-content">
+                    <time class="post-date" style="color:#81D8F7;"> Computer Science</time>
+                    <div class="blog-post-title">
+                        <h5>
+                            <a data-id="2301" href="#">
+                                Coming Soon		
+                            </a>
+                        </h5>
+                    </div>
+                    <div class="blog-post-content">
+                        Coming Soon	
+                    </div>
+                </div>
+            </article>            
+            </div>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./jquery.tagcanvas.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
